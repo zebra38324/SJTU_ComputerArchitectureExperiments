@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Jun 19 08:08:26 2019
+# Process ID: 3848
+# Current directory: G:/labs111/lab06
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3956 G:\labs111\lab06\lab06.xpr
+# Log file: G:/labs111/lab06/vivado.log
+# Journal file: G:/labs111/lab06\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project G:/labs111/lab06/lab06.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config G:/labs111/lab06/top_tb_behav.wcfg
+source top_tb.tcl
+current_wave_config {top_tb_behav.wcfg}
+add_wave {{/top_tb/u0/mem1/memFile}} 
+restart
+restart
+run 450 ns
+run 500 ns
+restart
+restart
+run 500 ns
+save_wave_config {G:/labs111/lab06/top_tb_behav.wcfg}
+close_sim

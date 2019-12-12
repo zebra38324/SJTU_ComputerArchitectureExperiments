@@ -1,0 +1,20 @@
+jump 111 跳到inst[7]
+被跳指令
+被跳指令
+被跳指令
+被跳指令
+被跳指令
+被跳指令
+lw $1 = mem[7]   (7)
+lw $2 = mem[3]   (3)
+add $3=$1+$2     (a)  load-use冒险，有forwarding，停顿一周期
+sub $4=$1-$2      (4)  
+and $5=$3&$1    (2)
+or $6=$3|$4         (e)
+sw mem[3]=$3    (a)
+slt $7=$2<$4       (1)
+lw $8=mem[3]     (a)
+nor $10=$1 nor $6  (fffffff0)
+beq $3 $8 1               数据冒险，利用forwarding，不停顿
+addi $9=$6+1（被跳掉）
+add $9=$6+$8    (18=a+e)
